@@ -1,6 +1,6 @@
 
 
-export abstract class Persona{
+export class Persona{
     private nombre:string;
     private apellido:string;
     private dni:number;

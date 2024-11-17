@@ -9,12 +9,15 @@ export class Veterinaria{
     private personas:Persona[]=[];
     private clientes:Cliente[]=[];
     
+
+    
     
 
-    constructor(nombre:string,direccion:string,id:number,){
+    constructor(nombre:string,direccion:string,id:number){
         this.nombre=nombre;
         this.direccion=direccion;
         this.id=id;
+
        
         
     }
@@ -43,7 +46,7 @@ export class Veterinaria{
     getCiente(){
         return this.clientes;
     }
-   /*  setConsulta(persona:Persona):void{
+    getConsulta(paciente:Persona):void{
         this.personas.push();
         console.log(` paciente nuevo ${this.personas.getNombre()} agregado`);
     }
@@ -55,5 +58,6 @@ export class Veterinaria{
     eliminarCliente(veterinarias:Veterinaria){
         this.veterinarias= this.veterinarias.filter(veterinarias=> veterinarias.getNombre());
         console.log(`veterinaria selecionada ${veterinarias.getNombre()} ha sido eliminada`); 
-    } */
-} 
+
+    }
+}
