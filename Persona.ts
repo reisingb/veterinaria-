@@ -1,60 +1,60 @@
 
 
-export class Persona{
-    private nombre:string;
-    private apellido:string;
-    private dni:number;
-    private domicilio:string;
-    private numeroId:number;
-    private cantidadVisita:number;
+export abstract class Persona {
+    private nombre: string;
+    private apellido: string;
+    private dni: number;
+    private domicilio: string;
+    private numeroId: number;
+    protected cantidadVisita: number;
 
 
-    constructor(nombre:string,apellido:string,dni:number,domicilio:string,numeroId:number,cantidadVisita:number){
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.dni=dni;
-        this.domicilio=domicilio;
-        this.numeroId=numeroId;
-        this.cantidadVisita=cantidadVisita;
+    constructor(nombre: string, apellido: string, dni: number, domicilio: string, numeroId: number, cantidadVisita: number) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.domicilio = domicilio;
+        this.numeroId = numeroId;
+        this.cantidadVisita = cantidadVisita;
     }
 
-    getNombre(){
+    getNombre() {
         return this.nombre;
     }
-    getApellido(){
+    getApellido() {
         return this.apellido;
     }
-    getDni(){
+    getDni() {
         return this.dni;
     }
-    getDomicilio(){
+    getDomicilio() {
         return this.domicilio;
     }
-    getNumeroId(){
+    getNumeroId() {
         return this.numeroId;
     }
-    setNombre(nombre:string):void{
-        this.nombre=nombre;
+    setNombre(nombre: string): void {
+        this.nombre = nombre;
     }
-    setApellido(apellido:string):void{
-        this.apellido=apellido;
+    setApellido(apellido: string): void {
+        this.apellido = apellido;
     }
-    setDni(dni:number){
-        this.dni=dni;
+    setDni(dni: number) {
+        this.dni = dni;
     }
-    setDomicilio(domicilio:string):void{
-        this.domicilio=domicilio;
+    setDomicilio(domicilio: string): void {
+        this.domicilio = domicilio;
     }
-    setNumeroId(numeroId:number):void{
-        this.numeroId=numeroId;
+    setNumeroId(numeroId: number): void {
+        this.numeroId = numeroId;
     }
-    getCantidadVisita(){
+    getCantidadVisita() {
         return this.cantidadVisita;
     }
-    setCantidadVisita(){
-        this.cantidadVisita=this.cantidadVisita;
+    setCantidadVisita() {
+        this.cantidadVisita = this.cantidadVisita;
     }
-   
+
 }
 
 

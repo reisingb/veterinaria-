@@ -1,23 +1,21 @@
-import { Persona } from "./Persona";
-import { ClienteVip } from "./clienteVip";
-export class Cliente{  
-    private cantidaPaciente:[];
-    private obraSocial:string;
-    private tipoCliente:ClienteVip;
+import { Persona } from './Persona';
 
-    constructor(cantidadPaciente:[], obraSocial:string,tipoCliente:ClienteVip){
-        this.cantidaPaciente =cantidadPaciente;
-        this.obraSocial = obraSocial;
-        this.tipoCliente=tipoCliente;
-    }
-}
-  
-class ClienteVip{
-    private servicios:string[];
-    private porcentajeDescuento:number;
+export class Cliente extends Persona {
+    cantidadVisita: number;
+    clienteVIP: boolean;
 
-    constructor(servicios: string[], porcentajeDescuento: number) {
-        this.servicios = servicios;
-        this.porcentajeDescuento = porcentajeDescuento;
+    constructor(nombre: string, apellido: string, dni: number, domicilio: string, numeroId: number, cantidadVisita: number) {
+        super(nombre, apellido, dni, domicilio, numeroId, cantidadVisita);
+        this.cantidadVisita = 0;
+        this.clienteVIP = false;
     }
-}
+
+    sumarVisita() {
+        this.cantidadVisita++;
+        if (this.cantidadVisita >= 5) {
+            this.clienteVIP = true;
+        }
+    }
+};
+
+
