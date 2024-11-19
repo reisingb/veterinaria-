@@ -1,12 +1,11 @@
 
-
 export abstract class Persona {
-    private nombre: string;
-    private apellido: string;
-    private dni: number;
-    private domicilio: string;
-    private numeroId: number;
-    protected cantidadVisita: number;
+    protected nombre: string;
+    protected apellido: string;
+    protected dni: number;
+    protected domicilio: string;
+    protected numeroId: number;
+     cantidadVisita: number;
 
 
     constructor(nombre: string, apellido: string, dni: number, domicilio: string, numeroId: number, cantidadVisita: number) {

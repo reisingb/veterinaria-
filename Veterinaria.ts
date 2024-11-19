@@ -1,6 +1,7 @@
 import { stringify } from "querystring";
 import { Cliente } from "./Cliente";
 import { Persona } from "./Persona";
+import { Proveedor } from "./proveedor";
 
 export class Veterinaria{
     private nombre: string;
@@ -8,11 +9,8 @@ export class Veterinaria{
     private id:number;
     private personas:Persona[]=[];
     private clientes:Cliente[]=[];
+    private proveedores:Proveedor[]=[];
     
-
-    
-    
-
     constructor(nombre:string,direccion:string,id:number){
         this.nombre=nombre;
         this.direccion=direccion;
@@ -47,17 +45,27 @@ export class Veterinaria{
         return this.clientes;
     }
     getConsulta(paciente:Persona):void{
-        this.personas.push();
-        console.log(` paciente nuevo ${this.personas.getNombre()} agregado`);
+        this.personas.push(paciente);
+        console.log(` paciente nuevo ${paciente.getNombre()} agregado`);
     }
-    agregarCliente(persona:Persona){
-        this.clientes.push(persona);
+    agregarCliente(clientes:Cliente){
+        this.clientes.push(clientes);
         console.log(` cliente ${Cliente.getNombre()} agregado`);
     
     }
-    eliminarCliente(veterinarias:Veterinaria){
-        this.veterinarias= this.veterinarias.filter(veterinarias=> veterinarias.getNombre());
-        console.log(`veterinaria selecionada ${veterinarias.getNombre()} ha sido eliminada`); 
+    eliminarCliente(clientes:Cliente){
+        this.clientes= this.clientes.filter(c => c.getNombre() !== clientes.getNombre());
+        console.log(`cliente selecionado ${clientes.getNombre()} ha sido eliminado`); 
+
+    }
+    agregarProveedor(proveedores:Proveedor){
+        this.proveedores.push(proveedores);
+        console.log(` proveedor ${Proveedor.getNombre()} agregado`);
+    
+    }
+    eliminarProveedor(proveedores:Proveedor){
+        this.proveedores= this.proveedores.filter(p => p.getNombre() !== proveedores.getNombre());
+        console.log(`proveedor selecionado ${proveedores.getNombre()} ha sido eliminado`); 
 
     }
 }

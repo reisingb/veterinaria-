@@ -1,4 +1,4 @@
-class Paciente {
+export class Paciente {
     private nombre: string;
     private especie: string;
     private edad: number;

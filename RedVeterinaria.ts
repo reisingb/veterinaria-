@@ -2,7 +2,7 @@ import { stringify } from "querystring";
 import { Veterinaria } from "./Veterinaria";
 
 
-class RedVeterinaria{
+export class RedVeterinaria{
     private veterinarias:Veterinaria[]=[];
     protected alta:string;
     protected baja:string;

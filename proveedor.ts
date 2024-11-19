@@ -4,16 +4,16 @@ import { Persona } from "./Persona";
 export class Proveedor extends Persona {
     private rubro: string;
     private telefono: number;
-    private alta: string;
-    private baja: string;
+
+    static getNombre: any;
 
   
-    constructor(nombre: string, numeroId: string, rubro: string, telefono: number, alta: string, baja: string) {
-        super (nombre, numeroId); 
+    constructor(nombre: string, numeroId: number, rubro: string, telefono: number) {
+        super("carlos" ,"perez",3025985,"las rosas 2010",1,0); 
         this.rubro = rubro;
         this.telefono = telefono;
-        this.alta = alta;
-        this.baja = baja;
+        /* this.alta = alta;
+        this.baja = baja; */
     }
 
     
@@ -34,7 +34,7 @@ export class Proveedor extends Persona {
         this.telefono = value;
     }
     
-    getAlta(): string {
+   /*  getAlta(): string {
         return this.alta;
     }
 
@@ -49,5 +49,5 @@ export class Proveedor extends Persona {
 
     setBaja(value: string) {
         this.baja = value;
-    }
+    } */
 }
