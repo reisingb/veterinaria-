@@ -1,7 +1,7 @@
 
-import { Proveedor } from "./Proveedor";
+import { Proveedor } from "./proveedor";
 import {Veterinaria} from "./Veterinaria";
-import { Paciente } from "./paciente";
+import { Paciente } from "./Paciente";
 import { RedVeterinaria } from "./RedVeterinaria";
 import { Cliente } from "./Cliente";
 import { ClienteVIP } from "./ClienteVip";
