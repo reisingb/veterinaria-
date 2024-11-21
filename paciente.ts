@@ -6,16 +6,21 @@ export class Paciente {
     private numeroID: number;
     private cantidadVisita: number;
 
-    
-    constructor(nombre: string, especie: string, edad: number, raza: string, numeroID: number, cantidadVisita: number)
-     {
+
+    constructor(nombre: string, especie: string, edad: number, raza: string, numeroID: number, cantidadVisita: number) {
         this.nombre = nombre;
-        this.especie = especie;
+        this.especie = this.clasificarEspecie(especie);
         this.edad = edad;
         this.raza = raza;
         this.numeroID = numeroID;
         this.cantidadVisita = cantidadVisita;
     }
+
+    private clasificarEspecie(especie: string): string {
+        const especiesComunes = ["perro", "gato"];
+        return especiesComunes.includes(especie.toLowerCase()) ? especie : "exótica";
+    }
+
 
 
     getNombre(): string {
@@ -31,20 +36,20 @@ export class Paciente {
     }
 
     setEspecie(especie: string) {
-        this.especie = especie;
+        this.especie = this.clasificarEspecie(especie);
     }
 
-   
+
     getEdad(): number {
         return this.edad;
     }
 
     setEdad(edad: number) {
-        this.edad=edad;
-        }
-    
+        this.edad = edad;
+    }
 
-    
+
+
     getRaza(): string {
         return this.raza;
     }
@@ -58,20 +63,20 @@ export class Paciente {
     }
 
     setNumeroID(numeroID: number) {
-        
-            this.numeroID = numeroID;
-      
-        }
-    
 
-   
+        this.numeroID = numeroID;
+
+    }
+
+
+
     getCantidadVisita(): number {
         return this.cantidadVisita;
     }
 
     setCantidadVisita(cantidadVisita: number) {
-        
-            this.cantidadVisita = cantidadVisita;
-        
+
+        this.cantidadVisita = cantidadVisita;
+
     }
 }
