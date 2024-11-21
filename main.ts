@@ -1,5 +1,5 @@
 
-import { Proveedor } from "./proveedor";
+import { Proveedor } from "./Proveedor";
 import {Veterinaria} from "./Veterinaria";
 import { Paciente } from "./Paciente";
 import { RedVeterinaria } from "./RedVeterinaria";
