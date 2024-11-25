@@ -6,7 +6,7 @@ export class Cliente extends Persona {
     static getNombre: any;
 
     constructor(nombre: string, apellido: string, dni: number, domicilio: string, numeroId: number, cantidadVisita: number) {
-        super(nombre, apellido, dni, domicilio, numeroId, cantidadVisita);
+        super(nombre, apellido, dni, domicilio, numeroId);
         this.cantidadVisita = 0;
         this.clienteVIP = false;
     }

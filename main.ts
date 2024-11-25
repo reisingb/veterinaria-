@@ -6,8 +6,8 @@ import { RedVeterinaria } from "./RedVeterinaria";
 import { Cliente } from "./Cliente";
 import { ClienteVIP } from './ClienteVip';
 
-let veterianaria1: Veterinaria = new Veterinaria("los alamos", "albaro barros", 1);
-let veterianaria2: Veterinaria = new Veterinaria("el calden", "moya 4010", 2);
+let veterianaria1: Veterinaria = new Veterinaria("los alamos", "albaro barros", 1,[]);
+let veterianaria2: Veterinaria = new Veterinaria("el calden", "moya 4010", 2,[]);
 console.log(veterianaria1);
 console.log(veterianaria2);
 

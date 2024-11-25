@@ -9,7 +9,7 @@ export class Proveedor extends Persona {
 
   
     constructor(nombre: string, numeroId: number, rubro: string, telefono: number) {
-        super("carlos" ,"perez",3025985,"las rosas 2010",1,0); 
+        super("carlos" ,"perez",3025985,"las rosas 2010",1,); 
         this.rubro = rubro;
         this.telefono = telefono;
         /* this.alta = alta;

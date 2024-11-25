@@ -1,4 +1,3 @@
-import { stringify } from "querystring";
 import { Cliente } from "./Cliente";
 import { Persona } from "./Persona";
 import { Proveedor } from "./Proveedor";
@@ -11,59 +10,67 @@ export class Veterinaria {
     private clientes: Cliente[] = [];
     private proveedores: Proveedor[] = [];
 
-    constructor(nombre: string, direccion: string, id: number) {
+    constructor(nombre: string, direccion: string, id: number, personas: Persona[]) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.id = id;
-
+        this.personas = personas;
     }
 
-    getNombre() {
+    getNombre(): string {
         return this.nombre;
     }
-    getDireccion() {
+
+    getDireccion(): string {
         return this.direccion;
     }
-    getId() {
+
+    getId(): number {
         return this.id;
     }
-    setNombre(nombre: string) {
+
+    setNombre(nombre: string): void {
         this.nombre = nombre;
     }
-    setDireccion(direccion: string) {
+
+    setDireccion(direccion: string): void {
         this.direccion = direccion;
     }
-    setId(id: number) {
+
+    setId(id: number): void {
         this.id = id;
     }
-    getPaciente() {
+
+    getPersonas(): Persona[] {
         return this.personas;
     }
-    getCiente() {
-        return this.clientes;
+
+    getPacientes(): Persona[] {
+        return this.personas; // Podría ser más específico si se tiene una lógica para filtrar pacientes
     }
-    getConsulta(paciente: Persona): void {
+
+    agregarPaciente(paciente: Persona): void {
         this.personas.push(paciente);
-        console.log(` paciente nuevo ${paciente.getNombre()} agregado`);
+        console.log(`Paciente nuevo ${paciente.getNombre()} agregado`);
     }
-    agregarCliente(clientes: Cliente) {
-        this.clientes.push(clientes);
-        console.log(` cliente ${Cliente.getNombre()} agregado`);
 
+    agregarCliente(cliente: Cliente): void {
+        this.clientes.push(cliente);
+        console.log(`Cliente ${cliente.getNombre()} agregado`);
     }
-    eliminarCliente(clientes: Cliente) {
-        this.clientes = this.clientes.filter(c => c.getNombre() !== clientes.getNombre());
-        console.log(`cliente selecionado ${clientes.getNombre()} ha sido eliminado`);
 
+    eliminarCliente(cliente: Cliente): void {
+        this.clientes = this.clientes.filter(c => c.getNombre() !== cliente.getNombre());
+        console.log(`Cliente seleccionado ${cliente.getNombre()} ha sido eliminado`);
     }
-    agregarProveedor(proveedores: Proveedor) {
-        this.proveedores.push(proveedores);
-        console.log(` proveedor ${Proveedor.getNombre()} agregado`);
 
+    agregarProveedor(proveedor: Proveedor): void {
+        this.proveedores.push(proveedor);
+        console.log(`Proveedor ${proveedor.getNombre()} agregado`);
     }
-    eliminarProveedor(proveedores: Proveedor) {
-        this.proveedores = this.proveedores.filter(p => p.getNombre() !== proveedores.getNombre());
-        console.log(`proveedor selecionado ${proveedores.getNombre()} ha sido eliminado`);
 
+    eliminarProveedor(proveedor: Proveedor): void {
+        this.proveedores = this.proveedores.filter(p => p.getNombre() !== proveedor.getNombre());
+        console.log(`Proveedor seleccionado ${proveedor.getNombre()} ha sido eliminado`);
     }
 }
