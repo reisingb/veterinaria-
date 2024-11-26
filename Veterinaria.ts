@@ -7,14 +7,16 @@ export class Veterinaria {
     private nombre: string;
     private direccion: string;
     private id: number;
+    private static contadorId: number = 1;
     private personas: Persona[] = [];
     private clientes: Cliente[] = [];
     private proveedores: Proveedor[] = [];
 
-    constructor(nombre: string, direccion: string, id: number) {
+    constructor(nombre: string, direccion: string) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.id = id;
+        this.id= Veterinaria.contadorId++;
+        
 
     }
 

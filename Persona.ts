@@ -5,16 +5,18 @@ export abstract class Persona {
     protected dni: number;
     protected domicilio: string;
     protected numeroId: number;
+    private static contadorId: number = 1;
      cantidadVisita: number;
+     private static contadorVisita: number = 1;
 
 
-    constructor(nombre: string, apellido: string, dni: number, domicilio: string, numeroId: number, cantidadVisita: number) {
+    constructor(nombre: string, apellido: string, dni: number, domicilio: string) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.domicilio = domicilio;
-        this.numeroId = numeroId;
-        this.cantidadVisita = cantidadVisita;
+        this.numeroId = Persona.contadorId++;
+        this.cantidadVisita = Persona.contadorVisita++;
     }
 
     getNombre() {
