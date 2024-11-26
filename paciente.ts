@@ -1,3 +1,5 @@
+
+
 export class Paciente {
     private nombre: string;
     private especie: string;
@@ -8,7 +10,9 @@ export class Paciente {
     private cantidadVisita: number;
     private static contadorVisita: number = 1;
 
-    constructor(nombre: string, especie: string, edad: number, raza: string) {
+
+    constructor(nombre: string, especie: string, edad: number, raza: string, numeroID: number, cantidadVisita: number) {
+       
         this.nombre = nombre;
         this.especie = this.clasificarEspecie(especie);
         this.edad = edad;

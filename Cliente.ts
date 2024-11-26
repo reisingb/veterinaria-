@@ -8,24 +8,10 @@ export class Cliente extends Persona {
     
 
 
-    constructor(nombre: string, apellido: string, dni: number, domicilio: string) {
-        super(nombre, apellido, dni, domicilio);
-        this.clienteVip = this.clienteVip;
-
-    }
-
-
-    getNombre(): string {
-       return this.nombre; 
-    }
-    setNombre(nombre: string): void {
-        this.nombre= nombre;
-    }
-    getClienteVip(){
-        return this.clienteVip;
-    }
-    setClienteVip(clienteVip:boolean):void{
-        this.clienteVip= clienteVip;
+    constructor(nombre: string, apellido: string, dni: number, domicilio: string, numeroId: number, cantidadVisita: number) {
+        super(nombre, apellido, dni, domicilio, numeroId);
+        this.cantidadVisita = 0;
+        this.clienteVIP = false;
     }
     
     sumarVisita(){
