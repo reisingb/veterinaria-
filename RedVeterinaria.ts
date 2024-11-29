@@ -1,55 +1,36 @@
-import { stringify } from "querystring";
 import { Veterinaria } from "./Veterinaria";
 
+export class RedVeterinaria {
+    private veterinarias: Veterinaria[] = [];
 
-export class RedVeterinaria{
-    private veterinarias:Veterinaria[]=[];
-    protected alta:string;
-    protected baja:string;
-    protected modificar:string;
-   
+    agregarVeterinaria(veterinaria: Veterinaria, id: number) {
+        this.veterinarias.push(veterinaria);
+        console.log(`Veterinaria ${veterinaria.getNombre()} ${id} agregada`);
+    }
 
-    constructor(alta:string,baja:string,modificar:string,){
-        this.alta=alta;
-        this.baja=baja;
-        this.modificar=modificar;
-        
+    eliminarVeterinaria(id: number) {
+        this.veterinarias = this.veterinarias.filter(v => v.getId() !== id);
+        console.log(`Veterinaria ${id} ha sido eliminada`);
     }
-     getAlta(){
-        return this.alta;
-    }
-    getBaja(){
-        return this.baja;
-    }
-    getModificar(){
-        return this.modificar;
-    }
-    setBaja(){
-        this.baja=this.baja;
 
+    modificarVeterinaria(id: number, nuevoNombre: string, nuevaDireccion: string) {
+        const veterinaria = this.veterinarias.find(v => v.getId() === id);
+        if (veterinaria) {
+            veterinaria.setNombre(nuevoNombre);
+            veterinaria.setDireccion(nuevaDireccion);
+            console.log(`Veterinaria ${id} ha sido modificada`);
+        } else {
+            console.log(`Veterinaria ${id} no encontrada`);
+        }
     }
-    setModificar(modificar:string){
-        this.modificar=this.modificar;
-    }
-    
-    agregarVeterinaria(veterinarias:Veterinaria){
-        this.veterinarias.push(veterinarias);
-        console.log(` veterinaria ${veterinarias.getNombre()} agregada`);
-    
-    }
-    eliminarVeterinaria(veterinarias:Veterinaria){
-        this.veterinarias= this.veterinarias.filter(veterinarias=> veterinarias.getNombre());
-        console.log(`veterinaria selecionada ${veterinarias.getNombre()} ha sido eliminada`); 
-    }
-   
-    }
-    
-    
-   
+};
 
- 
 
-    
+
+
+
+
+
 
 
 
