@@ -36,4 +36,4 @@ export class ClienteVIP extends Cliente {
             Beneficios Exclusivos: ${this.beneficios.join(", ")}
         `;
     }
-};
+}
