@@ -5,10 +5,10 @@ export class Cliente extends Persona {
     private id: number;
     private telefono: number;
 
-    constructor(nombre: string, apellido: string, dni: number, domicilio: string, id: number, telefono: number) {
-        super(nombre, apellido, dni, domicilio);
+    constructor(nombre: string, apellido: string, dni: number, domicilio: string, id: number, telefono: number, cantidadVisita: number) {
+        super(nombre, apellido, dni, domicilio, cantidadVisita);
         this.id = id;
-        this.cantidadVisita = 0;
+        this.cantidadVisita = cantidadVisita;
         this.telefono = telefono;
     }
 
@@ -71,6 +71,13 @@ export class Cliente extends Persona {
 
     setTelefono(telefono: number): void {
         this.telefono = telefono;
+    }
+    getCantidadVisita(): number {
+        return this.cantidadVisita;
+    }
+
+    setCantidadVisita(cantidadVisita: number): void {
+        this.cantidadVisita = cantidadVisita;
     }
 
     public mostrarResumen(): string {

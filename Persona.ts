@@ -8,12 +8,13 @@ export abstract class Persona {
 
     private static idsGenerados: Set<number> = new Set();
 
-    constructor(nombre: string, apellido: string, dni: number, domicilio: string) {
+    constructor(nombre: string, apellido: string, dni: number, domicilio: string, cantidadVisita: number) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.domicilio = domicilio;
         this.numeroId = this.generarIdUnico();
+        this.cantidadVisita = cantidadVisita;
     }
 
     private generarIdUnico(): number {
