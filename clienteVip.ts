@@ -3,8 +3,8 @@ import { Cliente } from './Cliente';
 export class ClienteVIP extends Cliente {
     private beneficios: string[];
 
-    constructor(nombre: string, apellido: string, dni: number, domicilio: string, numeroId: number, telefono: number, cantidadVisita: number) {
-        super(nombre, apellido, dni, domicilio, numeroId, telefono, cantidadVisita);
+    constructor(nombre: string, apellido: string, dni: number, domicilio: string, numeroId: number,telefono:number,cantidadVisita: number) {
+        super(nombre, apellido, dni, domicilio, numeroId,telefono,cantidadVisita );
         this.beneficios = [
             "Descuento del 20% en compras y consultas",
             "Atención domiciliaria",
@@ -31,7 +31,7 @@ export class ClienteVIP extends Cliente {
             Cliente VIP: ${this.getNombre} ${this.getApellido}
             DNI: ${this.getDni}
             Domicilio: ${this.getDomicilio}
-            Número ID: ${this.getId}
+            Número ID: ${this.numeroId}
             Cantidad de Visitas: ${this.getCantidadVisita}
             Beneficios Exclusivos: ${this.beneficios.join(", ")}
         `;
