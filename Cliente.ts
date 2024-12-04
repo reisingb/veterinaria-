@@ -85,15 +85,3 @@ export class Cliente extends Persona {
     }
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
