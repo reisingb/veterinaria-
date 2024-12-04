@@ -6,7 +6,7 @@ export class Proveedor extends Persona {
     private id: number;
 
     constructor(nombre: string, apellido: string, dni: number, domicilio: string, rubro: string, telefono: number, id: number) {
-        super(nombre, apellido, dni, domicilio);
+        super(nombre, apellido, dni, domicilio, 0);
         this.rubro = rubro;
         this.telefono = telefono;
         this.id = id;
@@ -69,4 +69,3 @@ export class Proveedor extends Persona {
         this.id = id;
     }
 }
-
