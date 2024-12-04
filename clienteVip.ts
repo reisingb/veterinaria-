@@ -32,8 +32,8 @@ export class ClienteVIP extends Cliente {
             DNI: ${this.getDni}
             Domicilio: ${this.getDomicilio}
             Número ID: ${this.getId}
-            Cantidad de Visitas: ${this.cantidadVisita}
+            Cantidad de Visitas: ${this.getCantidadVisita}
             Beneficios Exclusivos: ${this.beneficios.join(", ")}
         `;
     }
-}
+};
